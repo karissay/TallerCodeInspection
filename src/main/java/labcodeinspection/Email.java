@@ -1,21 +1,21 @@
 package labcodeinspection;
-
 public class Email {
+	
 
-	private String m_firstName; //NOPMD
-	private String m_lastName;
+	private String mfirstName; 
+	private String mlastName;
 	private String password = null;
 	private String department;
 	private int defaultpasswordLength = 8;
 	private String email;
 
 	public Email(String firstName, String lastName) {
-		this.m_firstName = firstName;
-		this.m_lastName = lastName;
+		this.mfirstName = firstName;
+		this.mlastName = lastName;
 	}
 
 	public void showInfo() {
-		System.out.println("\nFIRST NAME= " + m_firstName + "\nLAST NAME= " + m_lastName);
+		System.out.println("\nFIRST NAME= " + mfirstName + "\nLAST NAME= " + mlastName);
 		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + email + "\nPASSWORD= " + password);
 	}
 
@@ -45,7 +45,56 @@ public class Email {
 
 	public void generateEmail() {
 		this.password = this.randomPassword(this.defaultpasswordLength);
-		this.email = this.m_firstName.toLowerCase() + this.m_lastName.toLowerCase() + "@" + this.department
+		this.email = this.mfirstName.toLowerCase() + this.mlastName.toLowerCase() + "@" + this.department
 				+ ".espol.edu.ec";
 	}
+
+	public String getM_firstName() {
+		return mfirstName;
+	}
+
+	public void setM_firstName(String m_firstName) {
+		this.mfirstName = m_firstName;
+	}
+
+	public String getM_lastName() {
+		return mlastName;
+	}
+
+	public void setM_lastName(String m_lastName) {
+		this.mlastName = m_lastName;
+	}
+
+	public int getDefaultpasswordLength() {
+		return defaultpasswordLength;
+	}
+
+	public void setDefaultpasswordLength(int defaultpasswordLength) {
+		this.defaultpasswordLength = defaultpasswordLength;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 }
